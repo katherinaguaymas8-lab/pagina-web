@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panteón — Atlas de Mitología General</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="stars" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-glyph" aria-hidden="true">✦</span>
+      <div class="brand-text">
+        <h1>Panteón</h1>
+        <p class="brand-sub">Un atlas de dioses, mitos y símbolos</p>
+      </div>
+    </div>
+    <p class="header-note">Cuatro tradiciones · Un mismo asombro humano</p>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="intro" aria-labelledby="intro-heading">
+    <h2 id="intro-heading">Explora los panteones del mundo</h2>
+    <p>Cada cultura miró al cielo, al mar y a la muerte, y les puso un rostro. Filtra por tradición o busca un nombre para conocer su origen, su dominio y los símbolos que lo acompañan a través de los siglos.</p>
+  </section>
+
+  <section class="controls" aria-label="Filtros de búsqueda">
+    <div class="filter-group" role="group" aria-label="Filtrar por mitología">
+      <button class="filter-btn is-active" data-filter="todas" style="--accent:#C9A24B">
+        <span class="filter-dot"></span>Todas
+      </button>
+      <button class="filter-btn" data-filter="griega" style="--accent:#6FA3D8">
+        <span class="filter-dot"></span>Griega
+      </button>
+      <button class="filter-btn" data-filter="nordica" style="--accent:#5FC2B8">
+        <span class="filter-dot"></span>Nórdica
+      </button>
+      <button class="filter-btn" data-filter="egipcia" style="--accent:#E0B04E">
+        <span class="filter-dot"></span>Egipcia
+      </button>
+      <button class="filter-btn" data-filter="japonesa" style="--accent:#D2564B">
+        <span class="filter-dot"></span>Japonesa
+      </button>
+    </div>
+
+    <div class="search-group">
+      <label for="search" class="sr-only">Buscar personaje por nombre</label>
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input type="search" id="search" placeholder="Busca un nombre… Zeus, Loki, Ra…" autocomplete="off">
+    </div>
+  </section>
+
+  <p class="results-count" id="resultsCount" aria-live="polite"></p>
+
+  <section class="grid" id="grid" aria-label="Personajes mitológicos">
+    <!-- Las tarjetas se generan dinámicamente con JavaScript -->
+  </section>
+
+  <p class="no-results" id="noResults" hidden>Ningún dios responde a ese nombre. Intenta con otro.</p>
+
+</main>
+
+<footer class="site-footer">
+  <p>Panteón · Un recorrido educativo por la mitología comparada</p>
+</footer>
+
+<!-- Modal de perfil -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar perfil">✕</button>
+
+    <div class="modal-media">
+      <img id="modalImg" src="" alt="">
+      <span class="modal-badge" id="modalBadge"></span>
+    </div>
+
+    <div class="modal-body">
+      <p class="modal-eyebrow" id="modalMyth"></p>
+      <h3 id="modalName"></h3>
+      <p class="modal-role" id="modalRole"></p>
+
+      <div class="modal-section">
+        <h4>Origen</h4>
+        <p id="modalBio"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Dominios</h4>
+        <p id="modalDomain"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Símbolos y atributos</h4>
+        <ul id="modalSymbols" class="symbol-list"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
